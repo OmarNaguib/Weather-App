@@ -27,7 +27,7 @@ main {
   display: grid;
   grid-template-rows: 100px, 1fr;
   justify-content: center;
-  gap: 200px;
+  gap: 50px;
 
   background-image: url("../assets/bg/fog-covered-trees-with-purple-sunset-overhead.jpg");
   background-size: cover;
@@ -44,8 +44,18 @@ form * {
 }
 
 .container {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
 
   background-color: rgb(0, 0, 0, 0.2);
+}
+
+.second {
+  height: 200px;
+  width: 200px;
+}
+
+.container img {
+  height: 100%;
+  width: auto;
 }
