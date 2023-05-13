@@ -1,3 +1,5 @@
+import "./style.css";
+
 const API_KEY = "f778cdcb7c824caabea32221231205";
 // state variables
 let currentWeather;
