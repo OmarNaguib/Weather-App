@@ -12,6 +12,7 @@
   "rules": {
     "no-console": "off",
     "no-unused-vars": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "prefer-const": "warn"
   }
 }
