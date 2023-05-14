@@ -4,7 +4,7 @@ import "./style.css";
 const API_KEY = "f778cdcb7c824caabea32221231205";
 // state variables
 let currentWeather;
-const currentUnit = "c";
+let currentUnit = "c";
 
 // fetch and retrieve data
 async function getCityData(city) {
@@ -37,7 +37,7 @@ const thirdRow = document.querySelector("div.third");
 function populateContainer() {
   firstRow.textContent = `${currentWeather.name}, ${currentWeather.country}`;
 
-  secondRow.textContent = `${currentWeather.getTemp()}°`;
+  secondRow.textContent = `${currentWeather.getTemp()}°${currentUnit.toLocaleUpperCase()}`;
 
   thirdRow.textContent = currentWeather.text;
   const icon = document.createElement("img");
@@ -45,10 +45,21 @@ function populateContainer() {
   thirdRow.appendChild(icon);
 }
 
+function switchUnit() {
+  currentUnit = currentUnit === "c" ? "f" : "c";
+  if (currentWeather) {
+    secondRow.textContent = `${currentWeather.getTemp()}°`;
+  }
+}
+
+const switchButton = document.querySelector("button.switch");
+switchButton.addEventListener("click", (e) => {
+  switchUnit();
+});
+
 // main function
 async function handleCall(city) {
   currentWeather = await getCityData(city);
-
   populateContainer();
 }
 
