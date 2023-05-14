@@ -14,13 +14,13 @@ async function getCityData(city) {
   const data = await response.json();
   console.log(data);
   const { country, name } = data.location;
-  const { text, code } = data.current.condition;
+  const { text, icon } = data.current.condition;
   const { temp_c, temp_f, is_day } = data.current;
   return {
     country,
     name,
     text,
-    code,
+    icon,
     temp_c,
     temp_f,
     is_day,
@@ -34,24 +34,23 @@ const firstRow = document.querySelector("div.first");
 const secondRow = document.querySelector("div.second");
 const thirdRow = document.querySelector("div.third");
 
-function getImagePath() {
-  let path = "../assets/weather/64x64/";
-  if (currentWeather.is_day) path += "day/";
-  else path += "night/";
-  path += `${currentWeather.code}.png`;
-  return path;
-}
+// function getImagePath() {
+//   let path = "../assets/weather/64x64/";
+//   if (currentWeather.is_day) path += "day/";
+//   else path += "night/";
+//   path += `${currentWeather.code}.png`;
+//   return path;
+// }
 
 function populateContainer() {
   firstRow.textContent = `${currentWeather.name}, ${currentWeather.country}`;
 
   secondRow.textContent = `${currentWeather.getTemp()}°`;
 
-  const icon = document.createElement("img");
-  icon.src = getImagePath();
-  secondRow.appendChild(icon);
-
   thirdRow.textContent = currentWeather.text;
+  const icon = document.createElement("img");
+  icon.src = currentWeather.icon;
+  thirdRow.appendChild(icon);
 }
 
 // main function
