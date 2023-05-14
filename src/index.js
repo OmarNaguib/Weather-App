@@ -12,7 +12,6 @@ async function getCityData(city) {
     `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city.toLowerCase()}`
   );
   const data = await response.json();
-  console.log(data);
   const { country, name } = data.location;
   const { text, icon } = data.current.condition;
   const { temp_c, temp_f, is_day } = data.current;
@@ -59,8 +58,18 @@ switchButton.addEventListener("click", () => {
 
 // main function
 async function handleCall(city) {
-  currentWeather = await getCityData(city);
-  populateContainer();
+  try {
+    currentWeather = await getCityData(city);
+    populateContainer();
+  } catch {
+    console.log(
+      `something bad happend
+    common reasons
+    1.You submited an empty request
+    2.You need to write more exact requests to match the specific area
+    3.connection error`
+    );
+  }
 }
 
 // call on page load
