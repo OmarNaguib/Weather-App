@@ -53,7 +53,7 @@ function switchUnit() {
 }
 
 const switchButton = document.querySelector("button.switch");
-switchButton.addEventListener("click", (e) => {
+switchButton.addEventListener("click", () => {
   switchUnit();
 });
 
