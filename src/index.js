@@ -37,7 +37,7 @@ const thirdRow = document.querySelector("div.third");
 function populateContainer() {
   firstRow.textContent = `${currentWeather.name}, ${currentWeather.country}`;
 
-  secondRow.textContent = `${currentWeather.getTemp()}°${currentUnit.toLocaleUpperCase()}`;
+  secondRow.textContent = `${currentWeather.getTemp()}°${currentUnit.toUpperCase()}`;
 
   thirdRow.textContent = currentWeather.text;
   const icon = document.createElement("img");
@@ -48,7 +48,7 @@ function populateContainer() {
 function switchUnit() {
   currentUnit = currentUnit === "c" ? "f" : "c";
   if (currentWeather) {
-    secondRow.textContent = `${currentWeather.getTemp()}°`;
+    secondRow.textContent = `${currentWeather.getTemp()}°${currentUnit.toUpperCase()}`;
   }
 }
 

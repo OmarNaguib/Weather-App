@@ -88,3 +88,12 @@ button.switch {
   border: none;
   border-radius: 3px;
 }
+
+button {
+  background-color: #701a75;
+  color: white;
+}
+
+button:hover {
+  border: 1px solid white;
+}
