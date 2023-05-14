@@ -34,14 +34,6 @@ const firstRow = document.querySelector("div.first");
 const secondRow = document.querySelector("div.second");
 const thirdRow = document.querySelector("div.third");
 
-// function getImagePath() {
-//   let path = "../assets/weather/64x64/";
-//   if (currentWeather.is_day) path += "day/";
-//   else path += "night/";
-//   path += `${currentWeather.code}.png`;
-//   return path;
-// }
-
 function populateContainer() {
   firstRow.textContent = `${currentWeather.name}, ${currentWeather.country}`;
 

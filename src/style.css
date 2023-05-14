@@ -3,7 +3,13 @@ body {
   margin: 0;
   padding: 0;
 }
-
+body {
+  font-family: "Roboto Slab", serif;
+}
+body input,
+body button {
+  font: inherit;
+}
 h1 {
   margin: 0;
 }
@@ -11,15 +17,16 @@ h1 {
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 70px 1fr;
 }
 header {
-  background-color: black;
+  background-color: #701a75;
   color: white;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 15px;
 }
 
 main {
@@ -46,11 +53,22 @@ form * {
 
 .container {
   padding: 50px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   background-color: rgb(0, 0, 0, 0.2);
+  font-size: 30px;
+  color: white;
 }
 
-.second {
+.container .second {
+  font-size: 60px;
+}
+
+.container > .third {
+  display: flex;
+  align-items: center;
 }
 
 /* .container img {
